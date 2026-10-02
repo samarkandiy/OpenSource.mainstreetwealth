@@ -29,7 +29,7 @@ export default function ContributePage() {
         actions={
           <>
             <Link href="/github" className="btn-brand">Clone the repo</Link>
-            <Link href="https://github.com/mainstreetwealth/open-source/issues" className="btn-secondary" target="_blank" rel="noreferrer">
+            <Link href="https://github.com/samarkandiy/OpenSource.mainstreetwealth/issues" className="btn-secondary" target="_blank" rel="noreferrer">
               Browse issues
             </Link>
           </>

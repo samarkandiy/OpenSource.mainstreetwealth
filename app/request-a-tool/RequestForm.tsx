@@ -181,7 +181,7 @@ export function RequestForm() {
           Submit request
         </button>
         <p className="text-xs text-ink/55">
-          We don't share your info. You can also post the request on <a className="link-arrow" href="https://github.com/mainstreetwealth/open-source/discussions">GitHub Discussions</a>.
+          We don't share your info. You can also post the request on <a className="link-arrow" href="https://github.com/samarkandiy/OpenSource.mainstreetwealth/discussions" target="_blank" rel="noreferrer">GitHub Discussions</a>.
         </p>
       </div>
     </form>

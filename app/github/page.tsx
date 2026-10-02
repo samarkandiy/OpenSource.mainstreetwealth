@@ -2,21 +2,34 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { CTA } from "@/components/CTA";
+import {
+  GITHUB_REPO,
+  GITHUB_REPO_URL,
+  GITHUB_ISSUES_URL,
+  GITHUB_DISCUSSIONS_URL,
+  GITHUB_OWNER,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "GitHub",
   description:
-    "The Main Street Wealth open source GitHub organization. Install, clone, and self-host every tool.",
+    "The Main Street Wealth open source hub on GitHub. Clone, run, and self-host. One repo, every tool.",
   alternates: { canonical: "/github" },
 };
 
-const REPOS = [
-  { name: "mainstreetwealth/open-source", desc: "This hub. Next.js app, tools, and docs." },
-  { name: "mainstreetwealth/calculators", desc: "Calculator components, shared across the hub." },
-  { name: "mainstreetwealth/data", desc: "Open datasets: multiples, benchmarks, public comps." },
-  { name: "mainstreetwealth/mcp", desc: "MCP server exposing M&A tools to AI agents." },
-  { name: "mainstreetwealth/templates", desc: "Legal templates, LOIs, NDAs, closing checklists." },
-  { name: "mainstreetwealth/evals", desc: "Benchmarks for AI on M&A tasks." },
+const DIRS: { path: string; desc: string }[] = [
+  { path: "app/", desc: "Next.js App Router pages: hub, directory, every tool page." },
+  { path: "components/", desc: "Shared UI and calculator components (EBITDA, SDE, add-backs, rollover, net proceeds, scorecards)." },
+  { path: "lib/", desc: "Tool catalog, author profiles, schema.org helpers, and mainstreet.ai cross-link map." },
+  { path: "public/", desc: "Logo and static assets." },
+  { path: ".kiro/", desc: "Agent hooks and project automation." },
+];
+
+const NEXT_UP: { title: string; desc: string }[] = [
+  { title: "data/", desc: "Open multiples and benchmark datasets with sources (planned)." },
+  { title: "mcp/", desc: "MCP server exposing hub tools and datasets to AI agents (planned)." },
+  { title: "evals/", desc: "Benchmarks for AI on M&A tasks (planned)." },
+  { title: "templates/", desc: "NDA, LOI, closing checklists (planned)." },
 ];
 
 export default function GithubPage() {
@@ -25,17 +38,12 @@ export default function GithubPage() {
       <PageHeader
         eyebrow="Build with us"
         title="GitHub"
-        description="Everything on this hub is open source. Clone it, self-host it, break it, improve it, send a PR."
+        description="Everything on this hub is open source. One repo, every tool. Clone it, self-host it, break it, improve it, send a PR."
         crumbs={[{ url: "/", name: "Open source" }, { name: "GitHub" }]}
         actions={
           <>
-            <Link
-              href="https://github.com/mainstreetwealth"
-              className="btn-brand"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Visit the GitHub org
+            <Link href={GITHUB_REPO_URL} className="btn-brand" target="_blank" rel="noreferrer">
+              View the repo
             </Link>
             <Link href="/contribute" className="btn-secondary">
               Contributor guide
@@ -44,70 +52,126 @@ export default function GithubPage() {
         }
       />
       <div className="container-page">
-        <section>
+        <section className="surface-card flex flex-wrap items-start gap-4 p-5 sm:p-6">
+          <div className="flex-none">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-ink text-white">
+              <GithubIcon className="h-6 w-6" />
+            </span>
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="font-mono text-sm font-semibold text-ink">
+              {GITHUB_OWNER}/{GITHUB_REPO}
+            </div>
+            <p className="mt-1 text-sm text-ink/70">
+              The complete open source hub: Next.js app, 100-tool catalog, interactive calculators, SEO + EEAT infrastructure, and the mainstreetwealth.ai cross-link layer.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs">
+              <Link href={GITHUB_REPO_URL} target="_blank" rel="noreferrer" className="link-arrow">
+                Source
+              </Link>
+              <Link href={GITHUB_ISSUES_URL} target="_blank" rel="noreferrer" className="link-arrow">
+                Issues
+              </Link>
+              <Link href={GITHUB_DISCUSSIONS_URL} target="_blank" rel="noreferrer" className="link-arrow">
+                Discussions
+              </Link>
+              <Link href={`${GITHUB_REPO_URL}/pulls`} target="_blank" rel="noreferrer" className="link-arrow">
+                Pull requests
+              </Link>
+              <Link href={`${GITHUB_REPO_URL}/releases`} target="_blank" rel="noreferrer" className="link-arrow">
+                Releases
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-14">
           <h2 className="text-2xl font-bold text-ink">Clone and run</h2>
           <p className="mt-2 text-ink/70">
-            Everything on this hub is a Next.js app. Clone, install, and run.
+            Everything on this hub is a Next.js 15 app. Clone, install, and run.
           </p>
           <pre className="mt-5 overflow-x-auto rounded-2xl border border-line bg-ink p-5 text-sm text-mint-200 shadow-card">
-            {`git clone https://github.com/mainstreetwealth/open-source.git
-cd open-source
+            {`git clone ${GITHUB_REPO_URL}.git
+cd ${GITHUB_REPO}
 npm install
 npm run dev`}
           </pre>
           <p className="mt-3 text-xs text-ink/55">
-            Node 20+ required. The repo also ships with a Docker Compose file for the dataset services.
+            Node 20+ required. Then open <span className="code-chip">http://localhost:3000</span>.
           </p>
         </section>
 
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-ink">Repositories</h2>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            {REPOS.map((repo) => (
-              <Link
-                key={repo.name}
-                href={`https://github.com/${repo.name}`}
-                target="_blank"
-                rel="noreferrer"
-                className="surface-card flex items-start gap-3 p-5 no-underline transition hover:border-violet-300 hover:shadow-pop"
+          <h2 className="text-2xl font-bold text-ink">What's in the repo</h2>
+          <p className="mt-2 text-ink/70">
+            A single Next.js app. Each tool lives in <span className="code-chip">app/&lt;slug&gt;</span>, with shared logic in <span className="code-chip">components/</span> and <span className="code-chip">lib/</span>.
+          </p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {DIRS.map((d) => (
+              <div key={d.path} className="surface-card p-4">
+                <div className="font-mono text-sm font-semibold text-ink">{d.path}</div>
+                <p className="mt-1 text-sm text-ink/65">{d.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-14">
+          <h2 className="text-2xl font-bold text-ink">On the roadmap</h2>
+          <p className="mt-2 text-ink/70">
+            Modules we're planning as the hub grows beyond the Next.js app.
+          </p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {NEXT_UP.map((d) => (
+              <div
+                key={d.title}
+                className="rounded-2xl border border-dashed border-line bg-surface-soft p-4"
               >
-                <div className="mt-0.5 inline-flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-ink text-white">
-                  <GithubIcon className="h-5 w-5" />
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-sm font-semibold text-ink">{d.title}</span>
+                  <span className="pill text-[10px]">Planned</span>
                 </div>
-                <div className="min-w-0">
-                  <h3 className="font-mono text-sm font-semibold text-ink">{repo.name}</h3>
-                  <p className="mt-1 text-sm text-ink/65">{repo.desc}</p>
-                </div>
-              </Link>
+                <p className="mt-1 text-sm text-ink/60">{d.desc}</p>
+              </div>
             ))}
           </div>
         </section>
 
         <section className="mt-14 grid gap-6 lg:grid-cols-2">
           <div className="surface-card p-6">
-            <h3 className="text-lg font-semibold text-ink">Install the MCP server</h3>
+            <h3 className="text-lg font-semibold text-ink">Found a bug or a wrong number?</h3>
             <p className="mt-2 text-sm text-ink/65">
-              Expose the open datasets and calculators to any MCP-compatible AI client.
+              Please open an issue. We triage weekly and corrections ship in the public changelog.
             </p>
-            <pre className="mt-4 overflow-x-auto rounded-xl bg-surface-sunken p-4 text-sm">
-              {`npx -y @mainstreetwealth/mcp@latest`}
-            </pre>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <Link href={GITHUB_ISSUES_URL} target="_blank" rel="noreferrer" className="btn-primary">
+                Open an issue
+              </Link>
+              <Link href="/request-a-tool" className="btn-secondary">
+                Request a tool
+              </Link>
+            </div>
           </div>
           <div className="surface-card p-6">
-            <h3 className="text-lg font-semibold text-ink">Use the data API</h3>
+            <h3 className="text-lg font-semibold text-ink">Want to contribute?</h3>
             <p className="mt-2 text-sm text-ink/65">
-              Fetch multiples, benchmarks, and comps straight from your terminal.
+              Start with the contributor guide. Small, scoped PRs get reviewed within a week.
             </p>
-            <pre className="mt-4 overflow-x-auto rounded-xl bg-surface-sunken p-4 text-sm">
-              {`curl https://opensource.mainstreetwealth.ai/api/multiples?trade=hvac`}
-            </pre>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <Link href="/contribute" className="btn-primary">
+                Contributor guide
+              </Link>
+              <Link href={`${GITHUB_REPO_URL}/pulls`} target="_blank" rel="noreferrer" className="btn-secondary">
+                Open PRs
+              </Link>
+            </div>
           </div>
         </section>
 
         <CTA
           eyebrow="Ship it"
-          title="Found something to improve?"
-          description="Open an issue or a PR on the hub repo. Small, scoped PRs get reviewed within a week."
+          title="Have an idea to add to the hub?"
+          description="Open an issue, start a discussion, or send a PR. We review every submission."
         />
       </div>
     </>

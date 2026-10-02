@@ -100,7 +100,7 @@ export default function AboutPage() {
               Authors publish each tool after it's reviewed by Rob for accuracy and alignment with current market practice. Datasets ship with sample sizes and sources. Changes go through PR, with a public roadmap and changelog. Read our <Link href="/methodology" className="link-arrow">full methodology</Link> for how we build and verify every tool.
             </p>
             <p>
-              If you spot something wrong, open an <a href="https://github.com/samarkandiy/main-street-wealth/issues" target="_blank" rel="noreferrer" className="link-arrow">issue on GitHub</a> or <Link href="/request-a-tool" className="link-arrow">suggest a change</Link>.
+              If you spot something wrong, open an <a href="https://github.com/samarkandiy/OpenSource.mainstreetwealth/issues" target="_blank" rel="noreferrer" className="link-arrow">issue on GitHub</a> or <Link href="/request-a-tool" className="link-arrow">suggest a change</Link>.
             </p>
           </div>
         </section>

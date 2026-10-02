@@ -35,17 +35,14 @@ const COLS: { title: string; links: { href: string; label: string }[] }[] = [
     ],
   },
   {
-    title: "On mainstreetwealth.ai",
+    title: "Ecosystem",
     links: [
-      { href: "https://mainstreetwealth.ai/tools", label: "All free tools" },
-      { href: "https://mainstreetwealth.ai/tools/business-valuation-calculator", label: "Business valuation calculator" },
-      { href: "https://mainstreetwealth.ai/tools/ebitda-benchmarker", label: "EBITDA benchmarker" },
-      { href: "https://mainstreetwealth.ai/tools/sde-vs-ebitda", label: "SDE vs. EBITDA" },
-      { href: "https://mainstreetwealth.ai/tools/deal-structure", label: "Deal structure analyzer" },
-      { href: "https://mainstreetwealth.ai/tools/tax-estimator", label: "Tax estimator" },
-      { href: "https://mainstreetwealth.ai/tools/buyer-readiness-score", label: "Buyer readiness score" },
-      { href: "https://mainstreetwealth.ai/tools/exit-timeline", label: "Exit timeline" },
-      { href: "https://mainstreetwealth.ai/valuation", label: "Free valuation request" },
+      { href: "https://mainstreetwealth.ai", label: "Main site" },
+      { href: "https://di.mainstreetwealth.ai", label: "DealIntel · M&A news" },
+      { href: "https://mainstreetwealth.ai/tools", label: "Main-site tools" },
+      { href: "https://mainstreetwealth.ai/valuation", label: "Free valuation" },
+      { href: "https://mainstreetwealth.ai/knowledgebase", label: "Knowledge base" },
+      { href: "https://mainstreetwealth.ai/contact", label: "Contact" },
     ],
   },
 ];
@@ -97,12 +94,30 @@ export function Footer() {
           <Link href="/license-governance" className="no-underline hover:text-ink">
             License
           </Link>
-          <Link href="https://mainstreetwealth.ai/privacy" className="no-underline hover:text-ink">
+          <a
+            href="https://mainstreetwealth.ai/contact"
+            target="_blank"
+            rel="noreferrer"
+            className="no-underline hover:text-ink"
+          >
+            Contact
+          </a>
+          <a
+            href="https://mainstreetwealth.ai/privacy"
+            target="_blank"
+            rel="noreferrer"
+            className="no-underline hover:text-ink"
+          >
             Privacy
-          </Link>
-          <Link href="https://mainstreetwealth.ai/terms" className="no-underline hover:text-ink">
+          </a>
+          <a
+            href="https://mainstreetwealth.ai/terms"
+            target="_blank"
+            rel="noreferrer"
+            className="no-underline hover:text-ink"
+          >
             Terms
-          </Link>
+          </a>
           <span className="ml-auto hidden md:inline">
             Not legal, tax, or financial advice.
           </span>

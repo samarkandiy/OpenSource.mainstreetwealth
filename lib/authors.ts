@@ -43,7 +43,7 @@ export const AUTHORS: Record<string, Author> = {
       "linear-gradient(135deg, #7d2cfb 0%, #8947fc 50%, #02d5bb 100%)",
     url: "/about#avaz-bokiev",
     socials: [
-      { label: "GitHub", href: "https://github.com/samarkandiy/main-street-wealth" },
+      { label: "GitHub", href: "https://github.com/samarkandiy/OpenSource.mainstreetwealth" },
     ],
     expertise: [
       "ebitda",

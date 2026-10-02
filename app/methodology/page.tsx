@@ -95,7 +95,7 @@ export default function MethodologyPage() {
               </Link>
               . Report a correction via the{" "}
               <a
-                href="https://github.com/samarkandiy/main-street-wealth/issues"
+                href="https://github.com/samarkandiy/OpenSource.mainstreetwealth/issues"
                 target="_blank"
                 rel="noreferrer"
                 className="link-arrow"

@@ -5,6 +5,12 @@ import type { Author } from "./authors";
 
 export const SITE_URL = "https://opensource.mainstreetwealth.ai";
 export const MAIN_SITE_URL = "https://mainstreetwealth.ai";
+export const GITHUB_OWNER = "samarkandiy";
+export const GITHUB_REPO = "OpenSource.mainstreetwealth";
+export const GITHUB_REPO_URL = `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}`;
+export const GITHUB_ISSUES_URL = `${GITHUB_REPO_URL}/issues`;
+export const GITHUB_DISCUSSIONS_URL = `${GITHUB_REPO_URL}/discussions`;
+export const GITHUB_PROFILE_URL = `https://github.com/${GITHUB_OWNER}`;
 export const ORG_ID = `${MAIN_SITE_URL}#organization`;
 export const WEBSITE_ID = `${SITE_URL}#website`;
 
@@ -26,7 +32,8 @@ export function organizationSchema() {
     },
     sameAs: [
       "https://www.linkedin.com/company/mainstreetwealth",
-      "https://github.com/samarkandiy/main-street-wealth",
+      GITHUB_REPO_URL,
+      "https://di.mainstreetwealth.ai",
     ],
     description:
       "M&A advisory and business brokerage focused on home services and the trades: HVAC, plumbing, roofing, landscaping, pool, pest, and electrical.",
