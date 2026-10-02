@@ -1,0 +1,18 @@
+# Cache the Next.js static output aggressively.
+# Everything in /_next/static/* is content-hashed, so immutable is safe.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Hub images and the brand mark don't change between deploys.
+/logo.svg
+  Cache-Control: public, max-age=86400, s-maxage=86400
+/logo-mark.svg
+  Cache-Control: public, max-age=86400, s-maxage=86400
+/icon.svg
+  Cache-Control: public, max-age=86400, s-maxage=86400
+
+# Security headers (duplicated here so the asset path also gets them).
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

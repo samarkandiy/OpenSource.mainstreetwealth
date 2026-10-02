@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "opensource-mainstreetwealth",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-10-02",
+  // Required by @opennextjs/cloudflare so Node.js APIs (buffer, stream, etc.)
+  // and global_fetch_strictly_public (used by Next's image/og handling) are
+  // available in the Workers runtime.
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // Custom domain. `custom_domain: true` tells Cloudflare to attach the
+  // hostname to this Worker and create/validate the DNS record automatically.
+  // mainstreetwealth.ai is already on Cloudflare, so this just works.
+  "routes": [
+    { "pattern": "opensource.mainstreetwealth.ai", "custom_domain": true }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

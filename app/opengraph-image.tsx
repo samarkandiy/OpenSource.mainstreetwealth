@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
+// Note: no `export const runtime = "edge"`.
+// @opennextjs/cloudflare runs the Node.js runtime on Cloudflare Workers.
 export const alt = "Main Street Wealth Open Source — M&A tools for the trades";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
