@@ -72,10 +72,16 @@ export function Navbar() {
           })}
         </nav>
         <div className="hidden items-center gap-2 md:flex">
-          <Link href="/github" className="btn-secondary">
+          <a
+            href="https://github.com/samarkandiy/OpenSource.mainstreetwealth"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-secondary"
+            aria-label="View the source on GitHub"
+          >
             <GithubIcon className="h-4 w-4" />
             GitHub
-          </Link>
+          </a>
           <a
             href="https://mainstreetwealth.ai/valuation"
             className="btn-brand"
@@ -122,12 +128,15 @@ export function Navbar() {
               </Link>
             )
           )}
-          <Link
-            href="/github"
-            className="rounded-lg px-3 py-2 text-sm font-medium text-ink/80 no-underline hover:bg-surface-muted"
+          <a
+            href="https://github.com/samarkandiy/OpenSource.mainstreetwealth"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-ink/80 no-underline hover:bg-surface-muted"
           >
-            GitHub
-          </Link>
+            <span>GitHub</span>
+            <ExternalIcon className="h-3 w-3 text-ink/40" />
+          </a>
           <a
             href="https://mainstreetwealth.ai/valuation"
             className="btn-brand mt-2 w-full"
