@@ -1,0 +1,131 @@
+I read your site first. You already have `/tools`, `/valuation`, `/knowledgebase` and six trade pages, so I built this on those: one hub (`/open-source`) that lists every tool, and each tool gets its own landing page. Slugs are relative to `mainstreetwealth.ai/open-source/`.
+
+## A. Hub and community (10)
+1. `/` – Hub landing page with the full tool list
+2. `/directory` – Filterable directory by category, trade and deal stage
+3. `/github` – GitHub org, install and quick start
+4. `/docs` – Documentation home
+5. `/roadmap` – Public roadmap and voting
+6. `/changelog` – Release notes
+7. `/contribute` – Contributor guide and good-first-issues
+8. `/license-governance` – Licensing, governance, code of conduct
+9. `/community` – Discord/Slack and discussions
+10. `/request-a-tool` – Tool request form (also a lead source)
+
+## B. Valuation (12)
+11. `/ebitda-calculator`
+12. `/sde-calculator` – Seller's discretionary earnings, for smaller deals
+13. `/adjusted-ebitda-addbacks` – Add-back builder with a documentation checklist
+14. `/valuation-multiples-lookup` – Multiples by trade and size
+15. `/dcf-model`
+16. `/lbo-model` – Buyer-side returns
+17. `/comparable-transactions` – Comps analyzer
+18. `/valuation-monte-carlo` – Value range simulator
+19. `/rule-of-thumb-valuation` – Revenue and per-technician heuristics
+20. `/enterprise-to-equity-bridge`
+21. `/working-capital-peg-calculator`
+22. `/rollover-equity-calculator` – Fits your "exit twice" pitch
+
+## C. Financial analysis and QoE (10)
+23. `/qoe-checklist` – Quality of earnings
+24. `/financials-normalizer` – Cleans P&Ls into a standard format
+25. `/quickbooks-xero-parser`
+26. `/recurring-revenue-analyzer` – Service-agreement and maintenance-plan revenue
+27. `/customer-concentration-analyzer`
+28. `/churn-cohort-analyzer`
+29. `/job-costing-margin-analyzer`
+30. `/technician-productivity-benchmark`
+31. `/seasonality-adjuster` – LTM normalization
+32. `/debt-like-items-finder`
+
+## D. Deal structure and proceeds (10)
+33. `/earnout-simulator`
+34. `/seller-note-calculator`
+35. `/net-proceeds-calculator` – After-tax, after-fees
+36. `/asset-vs-stock-sale`
+37. `/purchase-price-allocation` – Form 8594
+38. `/installment-sale-calculator`
+39. `/sba-7a-calculator` – Buyer financing
+40. `/pro-forma-cap-table`
+41. `/distribution-waterfall`
+42. `/escrow-holdback-calculator`
+
+## E. Sourcing and marketing (10)
+43. `/buy-box-builder`
+44. `/buyer-matcher` – Matches sellers to buyer criteria
+45. `/target-screener` – Acquisition target list builder
+46. `/teaser-generator`
+47. `/cim-template` – Confidential information memorandum
+48. `/outreach-sequences` – Buyer and seller email templates
+49. `/pe-platform-directory` – Open dataset of roll-ups
+50. `/add-on-tracker`
+51. `/deal-pipeline-crm` – Self-hostable template
+52. `/market-map-generator`
+
+## F. Due diligence (10)
+53. `/dd-request-list-generator`
+54. `/data-room-structure`
+55. `/data-room-completeness-checker`
+56. `/contract-red-flag-scanner`
+57. `/service-agreement-extractor`
+58. `/state-licensing-checklist` – Contractor licensing by state
+59. `/insurance-risk-checklist`
+60. `/workforce-retention-analysis`
+61. `/field-software-diligence` – ServiceTitan, Jobber, Housecall Pro data audit
+62. `/safety-environmental-checklist`
+
+## G. Legal templates and closing (8)
+63. `/nda-generator`
+64. `/loi-generator`
+65. `/loi-comparison-tool` – Side-by-side bids
+66. `/term-sheet-summarizer`
+67. `/disclosure-schedule-builder`
+68. `/non-compete-by-state` – Enforceability map
+69. `/closing-checklist`
+70. `/transition-agreement-templates` – Consulting and employment
+
+## H. Exit readiness (8)
+71. `/exit-readiness-score`
+72. `/owner-dependence-scorecard`
+73. `/value-gap-analyzer`
+74. `/succession-planner`
+75. `/retirement-gap-calculator`
+76. `/exit-timeline-planner`
+77. `/12-month-pre-sale-checklist`
+78. `/tax-planning-checklist`
+
+## I. Data and benchmarks (8)
+79. `/data/multiples` – Open multiples dataset
+80. `/data/trade-benchmarks` – KPIs by trade
+81. `/data/public-comps`
+82. `/data/consolidator-tracker`
+83. `/data/market-trends-dashboard`
+84. `/data/state-density-map`
+85. `/data/api`
+86. `/data/glossary` – Machine-readable M&A glossary
+
+## J. AI and automation (8)
+87. `/ai/prompt-library`
+88. `/ai/cim-drafter`
+89. `/ai/financials-summarizer`
+90. `/ai/mcp-server` – M&A data and tools for AI agents (fits your existing AGENTS.md and llms.txt)
+91. `/ai/document-extraction-pipeline`
+92. `/ai/deal-memo-generator`
+93. `/ai/evals` – Benchmarks for M&A tasks
+94. `/ai/agent-skills`
+
+## K. Trade-specific toolkits (6)
+95. `/hvac-toolkit`
+96. `/plumbing-toolkit`
+97. `/roofing-toolkit`
+98. `/pest-control-toolkit`
+99. `/landscaping-toolkit`
+100. `/pool-and-electrical-toolkit`
+
+## Where I'd start
+- **First 10 to build:** #1, 2, 11, 12, 13, 14, 22, 35, 71, 72. They're quick to build, searched often, and push owners toward your free valuation.
+- **Best for authority:** #79 and 80 (open datasets) earn backlinks, and #90 positions you with AI agents.
+- **Compliance:** put "not legal, tax or financial advice" on the legal, tax and valuation pages (#33–38, 63–70, 78). Be careful publishing anything implying a guaranteed multiple, like the 6.5x average on your homepage, outside its context.
+- **Lead capture:** every tool page should end with a CTA to `/valuation` or `/contact`.
+
+I can turn this into a spreadsheet or a sitemap file, or draft the hub landing page copy, if you'd like.

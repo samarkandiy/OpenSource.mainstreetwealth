@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --ink: 20 0 54;
+    --surface: 255 255 255;
+    --surface-soft: 250 249 254;
+    --violet: 125 44 251;
+    --mint: 3 231 152;
+    --teal: 2 213 187;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    @apply bg-surface text-ink;
+    font-feature-settings: "cv11", "ss01", "ss03";
+  }
+
+  body {
+    @apply min-h-screen antialiased;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #ede6ff 0%, transparent 60%),
+      radial-gradient(900px 500px at 110% 10%, #d6fcee 0%, transparent 55%),
+      #ffffff;
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(125, 44, 251, 0.18);
+    color: #140036;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-display tracking-tight text-ink;
+  }
+
+  a {
+    @apply underline-offset-4;
+  }
+
+  input, select, textarea, button {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .surface-card {
+    @apply rounded-2xl border border-line bg-white shadow-card;
+  }
+
+  .surface-soft {
+    @apply rounded-2xl border border-line-subtle bg-surface-soft;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-2.5 py-1 text-xs font-medium text-ink/70;
+  }
+
+  .pill-violet {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-violet-200 bg-violet-50 px-2.5 py-1 text-xs font-medium text-violet-700;
+  }
+
+  .pill-mint {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-mint-200 bg-mint-50 px-2.5 py-1 text-xs font-medium text-mint-800;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-violet-500/20 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink text-white hover:bg-violet-700 shadow-sm;
+  }
+
+  .btn-brand {
+    @apply btn bg-brand-gradient text-white shadow-pop hover:brightness-105;
+  }
+
+  .btn-secondary {
+    @apply btn border border-line bg-white text-ink hover:border-violet-300 hover:text-violet-700;
+  }
+
+  .btn-ghost {
+    @apply btn text-ink/70 hover:bg-surface-muted hover:text-ink;
+  }
+
+  .link-arrow {
+    @apply inline-flex items-center gap-1 font-medium text-violet-700 no-underline hover:text-violet-800;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-line bg-white px-3 py-2.5 text-sm text-ink shadow-sm transition placeholder:text-ink/40 focus:border-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500/20;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-ink/60;
+  }
+
+  .kpi {
+    @apply rounded-xl border border-line bg-surface-soft p-4;
+  }
+
+  .kpi-value {
+    @apply mt-1 text-2xl font-bold text-ink;
+  }
+
+  .kpi-label {
+    @apply text-xs font-medium uppercase tracking-wide text-ink/50;
+  }
+
+  .section-title-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-violet-700;
+  }
+
+  .divider-dot::before {
+    content: "·";
+    @apply mx-1.5 text-ink/40;
+  }
+
+  .code-chip {
+    @apply inline-flex items-center rounded-md border border-line bg-surface-soft px-1.5 py-0.5 font-mono text-[0.78em] text-ink/80;
+  }
+
+  .prose-tool {
+    @apply max-w-none text-ink/80;
+  }
+
+  .prose-tool p {
+    @apply leading-relaxed;
+  }
+
+  .prose-tool ul {
+    @apply list-disc pl-5 space-y-1.5;
+  }
+
+  .prose-tool h2 {
+    @apply mt-10 text-2xl font-bold text-ink;
+  }
+
+  .prose-tool h3 {
+    @apply mt-6 text-lg font-semibold text-ink;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .mask-fade-r {
+    mask-image: linear-gradient(to right, black 70%, transparent 100%);
+  }
+}
